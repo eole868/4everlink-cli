@@ -1,6 +1,6 @@
 {
   "name": "@4everlink/cli",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "command line tool for upload file or directory use the IPFS Cluster HTTP API.",
   "bin": {
     "4everlink": "bin/cli.js"
@@ -11,6 +11,7 @@
   "license": "MIT",
   "dependencies": {
     "commander": "^4.1.1",
+    "debug": "4.3.1",
     "glob": "^7.1.6",
     "ipfs-cluster-api": "^0.0.9",
     "is-stream": "^2.0.0",
