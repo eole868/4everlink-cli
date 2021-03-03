@@ -1,6 +1,6 @@
 'use strict'
-function parseHost() {
-    const configDir = process.env.IPFS_CLUSTER_CLIENT_CONF || process.env.HOME + "/.4everlink"
+function parseConf() {
+    const configDir = process.env['_4EVERLINKCONF'] || process.env.HOME + "/.4everlink"
     const fs = require('fs')
     try{
         const path = require('path')
@@ -23,4 +23,4 @@ function parseHost() {
     }
 }
 
-exports = module.exports = parseHost
+exports = module.exports = parseConf

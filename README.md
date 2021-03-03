@@ -15,8 +15,24 @@ npm install -g @4everlink/cli
 ## Command
 
 ```
-$ 4everlink --help
+Usage: 4everlink [options] [command]
+
+Options:
+  -V, --version         output the version number
+  -h, --help            output usage information
+
+Commands:
+  config <arg> [value]  set or show config for host
+  add [options] <file>  upload file
+```
+### **`add`**
+```
+$ 4everlink add --help
+
 Usage: 4everlink [options] <file>
+
+upload file
+
 Options:
   -V, --version        output the version number
   -d, --debug          output extra debugging
@@ -37,7 +53,7 @@ output data:
   size: 1042
 }
 ```
-or use `showAll`
+or use `--showAll`
 ```
 [
   {
@@ -74,8 +90,25 @@ host: "127.0.0.1"
 port: 9094
 token: ""
 ```
-The env `4EVERLINKCONF` set custom config file path, for example:
-`export 4EVERLINKCONF=/custom/path`, the config file is `/custom/path/conf.yaml`.
+The env `_4EVERLINKCONF` set custom config file path, for example:
+`export _4EVERLINKCONF=/custom/path`, the config file is `/custom/path/conf.yaml`.
+
+### **`config`**
+```
+$ 4everlink config --help
+Usage: 4everlink config [options] <arg> [value]
+
+set or show config for host
+
+Arguments:
+
+  arg         the params to set, maybe host、port or token
+  value       the value to set
+
+Options:
+  -h, --help  output usage information
+```
+for example, set host: `4everlink config host "127.0.0.1"`; get current host: `4everlink config host `
 
 ## License
 

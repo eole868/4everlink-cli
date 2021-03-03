@@ -17,8 +17,20 @@ npm install -g @4everlink/cli
 ## 命令
 
 ```
-$ 4everlink --help
-Usage: 4everlink [options] <file>
+Usage: 4everlink [options] [command]
+
+Options:
+  -V, --version         output the version number
+  -h, --help            output usage information
+
+Commands:
+  config <arg> [value]  set or show config for host
+  add [options] <file>  upload file
+```
+### **`add`**
+```
+$ 4everlink add --help
+Usage: 4everlink add [options] <file>
 Options:
   -V, --version        output the version number
   -d, --debug          output extra debugging
@@ -39,7 +51,7 @@ Options:
   size: 1042
 }
 ```
-或者使用showAll参数
+或者使用`--showAll`参数
 ```
 [
   {
@@ -76,8 +88,26 @@ host: "127.0.0.1"
 port: 9094
 token: ""
 ```
-配置文件路径可以使用`4EVERLINKCONF`环境变量自定义设置。例如:
-`export 4EVERLINKCONF=/custom/path`, 配置文件为: `/custom/path/conf.yaml`。
+配置文件路径可以使用`_4EVERLINKCONF`环境变量自定义设置。例如:
+`export _4EVERLINKCONF=/custom/path`, 配置文件为: `/custom/path/conf.yaml`。
+
+### **`config`**
+```
+$ 4everlink config --help
+Usage: 4everlink config [options] <arg> [value]
+
+set or show config for host
+
+Arguments:
+
+  arg         the params to set, maybe host、port or token
+  value       the value to set
+
+Options:
+  -h, --help  output usage information
+```
+设置host为`127.0.0.1`:  `4everlink config host "127.0.0.1"`;
+查看当前host配置: `4everlink config host `
 
 ## 许可证
 

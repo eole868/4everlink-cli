@@ -6,6 +6,34 @@ const program = new Command()
 program.version('0.0.1')
 
 program
+  .command('config <arg> [value]')
+  .description('set or show config for host', {
+    arg: 'the params to set, maybe host、port or token',
+    value: 'the value to set'
+  })
+  .action((arg, value) => {
+    const avalivableArgs = ['host', 'port', 'token']
+    if(avalivableArgs.includes(arg)) {
+        const  parseConf = require('../src/parse-conf')
+        const configContent = parseConf()
+        if(value) {
+            const { updateConf } = require('../src/update-conf')
+            configContent[arg] = value
+            updateConf(configContent)
+        }else{
+            console.log(configContent[arg])
+        }
+    }
+    else
+    {
+        console.log(`unknown params: ${arg}`)
+    }
+      
+  })
+
+program
+  .command('add', { isDefault: true })
+  .description('upload file')
   .option('-d, --debug', 'output extra debugging')
   .option('-p, --path <path>', 'wrapper dir', '/')
   .option('--host <host>', 'ipfs cluster api host', '')
@@ -29,8 +57,8 @@ function run(file) {
     if (options.debug) console.log(options)
 
     let headers = {}
-    const parseHost = require('../src/parse-host')
-    const conf = parseHost()
+    const parseConf = require('../src/parse-conf')
+    const conf = parseConf()
     options.host = options.host || conf.host
     options.port = options.port || conf.port
     options.token = options.token || conf.token
