@@ -14,10 +14,9 @@ npm install -g @4everlink/cli
 
 ## Command
 
-##### **`add`**
 ```
 $ 4everlink --help
-Usage: add [options] <file>
+Usage: 4everlink [options] <file>
 Options:
   -V, --version        output the version number
   -d, --debug          output extra debugging
