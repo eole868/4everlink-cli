@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const { Command } = require('commander')
+const { Command, arguments } = require('commander')
 
 const program = new Command()
 program.version('0.0.1')
@@ -43,17 +43,16 @@ program
   .option('-r, --recursive', 'recursive all sub dir')
   .option('-a, --all', 'include hidden file')
   .arguments('<file>')
-  .action((file)=>{
-    run(file)
+  .action((file, options)=>{
+        run(file, options)
   })
   program.parse(process.argv)
   
 
 
-function run(file) {
+function run(file, options) {
     const IpfsClusterAPI = require('ipfs-cluster-api')
 
-    const options = program.opts()
     if (options.debug) console.log(options)
 
     let headers = {}
