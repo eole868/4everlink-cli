@@ -1,0 +1,52 @@
+{
+  "name": "@4everlink/cli",
+  "version": "0.0.1",
+  "description": "command line tool for upload file or directory use the IPFS Cluster HTTP API.",
+  "bin": {
+    "4everlink": "bin/cli.js"
+  },
+  "scripts": {
+  },
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^4.1.1",
+    "glob": "^7.1.6",
+    "ipfs-cluster-api": "^0.0.9",
+    "is-stream": "^2.0.0",
+    "yaml": "^1.10.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babelify": "^10.0.0",
+    "browserify": "^16.2.3",
+    "chai": "^4.2.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "keywords": [
+    "ipfs",
+    "ipfs-cluster",
+    "ipfs-cluster-upload",
+    "js-ipfs-cluster",
+    "js-ipfs-http-client"
+  ],
+  "contributors": [
+    "eloe868 <jsfng@qq.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eole868/4everlink-cli"
+  },
+  "homepage": "https://github.com/eole868/4everlink-cli#readme"
+}
